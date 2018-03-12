@@ -27,5 +27,12 @@
   },
   "dependencies": {
     "quicksettings": "^3.0.1"
+  },
+  "browserify": {
+    "options": {
+       "browserifyOptions": {
+          "debug": true
+       }
+    }
   }
 }

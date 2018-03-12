@@ -3,6 +3,17 @@ const ns = 'http://www.w3.org/2000/svg';
 const colourFromArray = (rgba) =>
     `rgba(${rgba[0]}, ${rgba[1]}, ${rgba[2]}, ${rgba[3]})`;
 
+const drawSVGCircle = (fill, stroke, centre, radius) => {
+    const path = document.createElementNS(ns, 'circle');
+
+    path.setAttribute('fill', colourFromArray(fill));
+    path.setAttribute('stroke', colourFromArray(stroke));
+    path.setAttribute('cx', centre.x);
+    path.setAttribute('cy', centre.y);
+    path.setAttribute('r', radius);
+    return path;
+};
+
 const drawSVGElem = (fill, stroke, pointsStr, name = 'path') => {
     const path = document.createElementNS(ns, name);
 
@@ -61,6 +72,7 @@ const drawQuadCurvePoly = (svg, points, fill, stroke) => {
 
 module.exports = {
     colourFromArray,
+    drawSVGCircle,
     drawSVGElem,
     drawStraightPoly,
     drawCurvePoly,

@@ -1,5 +1,5 @@
 const QuickSettings = require('quicksettings');
-const ShapeShifter = require('./graphics/shape-shifter');
+const ShapeShifter = require('./graphics/gabo-shifter');
 
 //Create svg
 //Create element for drawing (if it doesn't exist?)
@@ -27,12 +27,12 @@ const getDimensions = (el) => {
 };
 
 const defaultSettings = {
-    numPoints: 4,
+    numPoints: 64,
     speed: 5,
     outline1: true,
-    fill1: true,
+    fill1: false,
     outline2: true,
-    fill2: true,
+    fill2: false,
     outline3: true,
     fill3: true,
 };
@@ -52,15 +52,15 @@ settings.addDropDown('Points', [4, 8, 16, 32, 64], (obj) =>
 settings.addNumber('Speed', 1, 100, 5, 1, ShapeShifter.setSpeed);
 
 settings.addBoolean('Outline 1', true, ShapeShifter.setDrawLine(1));
-settings.addBoolean('Fill 1', true, ShapeShifter.setDrawFill(1));
+settings.addBoolean('Fill 1', false, ShapeShifter.setDrawFill(1));
 settings.addBoolean('Outline 2', true, ShapeShifter.setDrawLine(2));
-settings.addBoolean('Fill 2', true, ShapeShifter.setDrawFill(2));
+settings.addBoolean('Fill 2', false, ShapeShifter.setDrawFill(2));
 settings.addBoolean('Outline 3', true, ShapeShifter.setDrawLine(3));
 settings.addBoolean('Fill 3', true, ShapeShifter.setDrawFill(3));
 
 settings.addButton('New Colours', ShapeShifter.newColours);
 
-//settings.setValuesFromJSON(defaultSettings);
+// settings.setValuesFromJSON(defaultSettings);
 
 settings.setDraggable(true);
 settings.setCollapsible(true);
