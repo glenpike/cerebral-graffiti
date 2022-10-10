@@ -3,11 +3,16 @@ body {
   padding: 0;
   margin: 0;
 }
+.wrapper {
+  display: flex;
+}
 svg {
   background-color: #000;
 }
 .controls {
   position: relative;
+  width: 202px;
+  min-width: 202px;
 }
 .qs_main {
   background-color: rgba(0,0,0,0.3);
